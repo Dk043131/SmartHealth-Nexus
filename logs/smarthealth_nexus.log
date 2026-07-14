@@ -1,0 +1,459 @@
+2026-07-04 14:37:39,106 - smarthealth_nexus - INFO - Centralized logging system initialized.
+2026-07-04 14:37:54,307 - smarthealth_nexus - INFO - Centralized logging system initialized.
+2026-07-04 14:38:29,639 - smarthealth_nexus - INFO - Centralized logging system initialized.
+2026-07-04 14:49:23,003 - smarthealth_nexus - INFO - Centralized logging system initialized.
+2026-07-04 15:05:41,852 - smarthealth_nexus - INFO - Centralized logging system initialized.
+2026-07-04 15:07:40,053 - smarthealth_nexus - INFO - Centralized logging system initialized.
+2026-07-04 15:10:30,558 - smarthealth_nexus - INFO - Centralized logging system initialized.
+2026-07-04 15:11:36,075 - smarthealth_nexus - INFO - Executing relational database seeder...
+2026-07-04 15:11:36,082 - smarthealth_nexus - INFO - Seeding table 'hospitals' from CSV...
+2026-07-04 15:11:36,146 - smarthealth_nexus - INFO - Successfully seeded 70 records into table 'hospitals'.
+2026-07-04 15:11:36,147 - smarthealth_nexus - INFO - Seeding table 'medicines' from CSV...
+2026-07-04 15:11:36,219 - smarthealth_nexus - INFO - Successfully seeded 550 records into table 'medicines'.
+2026-07-04 15:11:36,219 - smarthealth_nexus - INFO - Seeding table 'users' from CSV...
+2026-07-04 15:11:36,248 - smarthealth_nexus - INFO - Successfully seeded 146 records into table 'users'.
+2026-07-04 15:11:36,248 - smarthealth_nexus - INFO - Seeding table 'doctors' from CSV...
+2026-07-04 15:11:36,300 - smarthealth_nexus - INFO - Successfully seeded 250 records into table 'doctors'.
+2026-07-04 15:11:36,300 - smarthealth_nexus - INFO - Seeding table 'medicine_inventory' from CSV...
+2026-07-04 15:11:41,348 - smarthealth_nexus - INFO - Successfully seeded 38500 records into table 'medicine_inventory'.
+2026-07-04 15:11:41,348 - smarthealth_nexus - INFO - Seeding table 'beds' from CSV...
+2026-07-04 15:11:41,388 - smarthealth_nexus - INFO - Successfully seeded 180 records into table 'beds'.
+2026-07-04 15:11:41,389 - smarthealth_nexus - INFO - Seeding table 'diagnostic_tests' from CSV...
+2026-07-04 15:11:41,416 - smarthealth_nexus - INFO - Successfully seeded 270 records into table 'diagnostic_tests'.
+2026-07-04 15:11:41,416 - smarthealth_nexus - INFO - Seeding table 'ambulances' from CSV...
+2026-07-04 15:11:41,445 - smarthealth_nexus - INFO - Successfully seeded 135 records into table 'ambulances'.
+2026-07-04 15:11:41,445 - smarthealth_nexus - INFO - Seeding table 'patients' from CSV...
+2026-07-04 15:12:58,217 - smarthealth_nexus - INFO - Centralized logging system initialized.
+2026-07-04 15:14:03,255 - smarthealth_nexus - INFO - Executing relational database seeder...
+2026-07-04 15:14:03,255 - smarthealth_nexus - INFO - Seeding table 'hospitals' from CSV...
+2026-07-04 15:14:03,338 - smarthealth_nexus - INFO - Successfully seeded 70 records into table 'hospitals'.
+2026-07-04 15:14:03,338 - smarthealth_nexus - INFO - Seeding table 'medicines' from CSV...
+2026-07-04 15:14:03,426 - smarthealth_nexus - INFO - Successfully seeded 550 records into table 'medicines'.
+2026-07-04 15:14:03,426 - smarthealth_nexus - INFO - Seeding table 'users' from CSV...
+2026-07-04 15:14:03,457 - smarthealth_nexus - INFO - Successfully seeded 146 records into table 'users'.
+2026-07-04 15:14:03,457 - smarthealth_nexus - INFO - Seeding table 'doctors' from CSV...
+2026-07-04 15:14:03,522 - smarthealth_nexus - INFO - Successfully seeded 250 records into table 'doctors'.
+2026-07-04 15:14:03,523 - smarthealth_nexus - INFO - Seeding table 'medicine_inventory' from CSV...
+2026-07-04 15:14:09,672 - smarthealth_nexus - INFO - Successfully seeded 38500 records into table 'medicine_inventory'.
+2026-07-04 15:14:09,672 - smarthealth_nexus - INFO - Seeding table 'beds' from CSV...
+2026-07-04 15:14:09,721 - smarthealth_nexus - INFO - Successfully seeded 180 records into table 'beds'.
+2026-07-04 15:14:09,721 - smarthealth_nexus - INFO - Seeding table 'diagnostic_tests' from CSV...
+2026-07-04 15:14:09,769 - smarthealth_nexus - INFO - Successfully seeded 270 records into table 'diagnostic_tests'.
+2026-07-04 15:14:09,770 - smarthealth_nexus - INFO - Seeding table 'ambulances' from CSV...
+2026-07-04 15:14:09,801 - smarthealth_nexus - INFO - Successfully seeded 135 records into table 'ambulances'.
+2026-07-04 15:14:09,801 - smarthealth_nexus - INFO - Seeding table 'patients' from CSV...
+2026-07-04 15:17:01,724 - smarthealth_nexus - INFO - Successfully seeded 449847 records into table 'patients'.
+2026-07-04 15:17:01,724 - smarthealth_nexus - INFO - Seeding table 'alerts' from CSV...
+2026-07-04 15:17:06,276 - smarthealth_nexus - INFO - Successfully seeded 28245 records into table 'alerts'.
+2026-07-04 15:17:06,276 - smarthealth_nexus - INFO - Seeding table 'audit_logs' from CSV...
+2026-07-04 15:20:09,121 - smarthealth_nexus - INFO - Centralized logging system initialized.
+2026-07-04 15:21:13,174 - smarthealth_nexus - INFO - Executing relational database seeder...
+2026-07-04 15:21:13,174 - smarthealth_nexus - INFO - Seeding table 'hospitals' from CSV...
+2026-07-04 15:21:13,241 - smarthealth_nexus - INFO - Successfully seeded 70 records into table 'hospitals'.
+2026-07-04 15:21:13,242 - smarthealth_nexus - INFO - Seeding table 'medicines' from CSV...
+2026-07-04 15:21:13,316 - smarthealth_nexus - INFO - Successfully seeded 550 records into table 'medicines'.
+2026-07-04 15:21:13,317 - smarthealth_nexus - INFO - Seeding table 'users' from CSV...
+2026-07-04 15:21:13,348 - smarthealth_nexus - INFO - Successfully seeded 146 records into table 'users'.
+2026-07-04 15:21:13,349 - smarthealth_nexus - INFO - Seeding table 'doctors' from CSV...
+2026-07-04 15:21:13,419 - smarthealth_nexus - INFO - Successfully seeded 250 records into table 'doctors'.
+2026-07-04 15:21:13,420 - smarthealth_nexus - INFO - Seeding table 'medicine_inventory' from CSV...
+2026-07-04 15:21:17,525 - smarthealth_nexus - INFO - Successfully seeded 38500 records into table 'medicine_inventory'.
+2026-07-04 15:21:17,525 - smarthealth_nexus - INFO - Seeding table 'beds' from CSV...
+2026-07-04 15:21:17,584 - smarthealth_nexus - INFO - Successfully seeded 180 records into table 'beds'.
+2026-07-04 15:21:17,585 - smarthealth_nexus - INFO - Seeding table 'diagnostic_tests' from CSV...
+2026-07-04 15:21:17,645 - smarthealth_nexus - INFO - Successfully seeded 270 records into table 'diagnostic_tests'.
+2026-07-04 15:21:17,646 - smarthealth_nexus - INFO - Seeding table 'ambulances' from CSV...
+2026-07-04 15:21:17,704 - smarthealth_nexus - INFO - Successfully seeded 135 records into table 'ambulances'.
+2026-07-04 15:21:17,704 - smarthealth_nexus - INFO - Seeding table 'patients' from CSV...
+2026-07-04 15:22:25,173 - smarthealth_nexus - INFO - Successfully seeded 449847 records into table 'patients'.
+2026-07-04 15:22:25,173 - smarthealth_nexus - INFO - Seeding table 'alerts' from CSV...
+2026-07-04 15:22:28,242 - smarthealth_nexus - INFO - Successfully seeded 28245 records into table 'alerts'.
+2026-07-04 15:22:28,242 - smarthealth_nexus - INFO - Seeding table 'audit_logs' from CSV...
+2026-07-04 15:22:28,650 - smarthealth_nexus - INFO - Successfully seeded 3875 records into table 'audit_logs'.
+2026-07-04 15:22:28,650 - smarthealth_nexus - WARNING - Seed file backend/seeds/data\notifications.csv not found. Skipping seeding for notifications.
+2026-07-04 15:22:28,650 - smarthealth_nexus - INFO - Seeding table 'resource_transfers' from CSV...
+2026-07-04 15:23:54,309 - smarthealth_nexus - INFO - Successfully seeded 529027 records into table 'resource_transfers'.
+2026-07-04 15:23:54,310 - smarthealth_nexus - INFO - Seeding table 'disease_trends' from CSV...
+2026-07-04 15:24:12,297 - smarthealth_nexus - INFO - Successfully seeded 157469 records into table 'disease_trends'.
+2026-07-04 15:24:12,297 - smarthealth_nexus - INFO - Seeding table 'weather_data' from CSV...
+2026-07-04 15:24:14,692 - smarthealth_nexus - INFO - Successfully seeded 25550 records into table 'weather_data'.
+2026-07-04 15:24:14,693 - smarthealth_nexus - INFO - Database seeding process completed successfully.
+2026-07-04 16:25:04,032 - smarthealth_nexus - INFO - Centralized logging system initialized.
+2026-07-06 21:53:41,177 - smarthealth_nexus - INFO - Centralized logging system initialized.
+2026-07-06 21:57:14,301 - smarthealth_nexus - INFO - Centralized logging system initialized.
+2026-07-06 22:12:07,609 - smarthealth_nexus - INFO - Centralized logging system initialized.
+2026-07-06 22:29:16,342 - smarthealth_nexus - INFO - Centralized logging system initialized.
+2026-07-06 22:53:51,803 - smarthealth_nexus - INFO - Centralized logging system initialized.
+2026-07-06 23:09:54,105 - smarthealth_nexus - INFO - Centralized logging system initialized.
+2026-07-06 23:11:24,585 - smarthealth_nexus - INFO - Centralized logging system initialized.
+2026-07-08 19:04:11,094 - smarthealth_nexus - INFO - Centralized logging system initialized.
+2026-07-08 19:06:39,694 - smarthealth_nexus - INFO - Centralized logging system initialized.
+2026-07-08 19:07:41,943 - smarthealth_nexus - INFO - Centralized logging system initialized.
+2026-07-08 19:09:18,833 - smarthealth_nexus - INFO - Centralized logging system initialized.
+2026-07-08 19:09:51,868 - smarthealth_nexus - INFO - Centralized logging system initialized.
+2026-07-08 19:10:00,975 - smarthealth_nexus - INFO - Centralized logging system initialized.
+2026-07-08 19:10:26,076 - smarthealth_nexus - INFO - Centralized logging system initialized.
+2026-07-08 19:10:54,661 - smarthealth_nexus - INFO - Executing relational database seeder...
+2026-07-08 19:10:54,662 - smarthealth_nexus - INFO - Seeding table 'hospitals' from CSV...
+2026-07-08 19:10:54,684 - smarthealth_nexus - INFO - Successfully seeded 70 records into table 'hospitals'.
+2026-07-08 19:10:54,684 - smarthealth_nexus - INFO - Seeding table 'medicines' from CSV...
+2026-07-08 19:10:54,705 - smarthealth_nexus - INFO - Successfully seeded 550 records into table 'medicines'.
+2026-07-08 19:10:54,705 - smarthealth_nexus - INFO - Seeding table 'users' from CSV...
+2026-07-08 19:10:54,710 - smarthealth_nexus - INFO - Successfully seeded 146 records into table 'users'.
+2026-07-08 19:10:54,710 - smarthealth_nexus - INFO - Seeding table 'doctors' from CSV...
+2026-07-08 19:10:54,723 - smarthealth_nexus - INFO - Successfully seeded 250 records into table 'doctors'.
+2026-07-08 19:10:54,723 - smarthealth_nexus - INFO - Seeding table 'medicine_inventory' from CSV...
+2026-07-08 19:10:56,172 - smarthealth_nexus - INFO - Successfully seeded 38500 records into table 'medicine_inventory'.
+2026-07-08 19:10:56,172 - smarthealth_nexus - INFO - Seeding table 'beds' from CSV...
+2026-07-08 19:10:56,183 - smarthealth_nexus - INFO - Successfully seeded 180 records into table 'beds'.
+2026-07-08 19:10:56,183 - smarthealth_nexus - INFO - Seeding table 'diagnostic_tests' from CSV...
+2026-07-08 19:10:56,190 - smarthealth_nexus - INFO - Successfully seeded 270 records into table 'diagnostic_tests'.
+2026-07-08 19:10:56,190 - smarthealth_nexus - INFO - Seeding table 'ambulances' from CSV...
+2026-07-08 19:10:56,196 - smarthealth_nexus - INFO - Successfully seeded 135 records into table 'ambulances'.
+2026-07-08 19:10:56,196 - smarthealth_nexus - INFO - Seeding table 'patients' from CSV...
+2026-07-08 19:11:19,405 - smarthealth_nexus - INFO - Successfully seeded 449847 records into table 'patients'.
+2026-07-08 19:11:19,406 - smarthealth_nexus - INFO - Seeding table 'alerts' from CSV...
+2026-07-08 19:11:20,620 - smarthealth_nexus - INFO - Successfully seeded 28245 records into table 'alerts'.
+2026-07-08 19:11:20,620 - smarthealth_nexus - INFO - Seeding table 'audit_logs' from CSV...
+2026-07-08 19:11:20,797 - smarthealth_nexus - INFO - Successfully seeded 3875 records into table 'audit_logs'.
+2026-07-08 19:11:20,797 - smarthealth_nexus - WARNING - Seed file backend/seeds/data/notifications.csv not found. Skipping seeding for notifications.
+2026-07-08 19:11:20,797 - smarthealth_nexus - INFO - Seeding table 'resource_transfers' from CSV...
+2026-07-08 19:11:55,422 - smarthealth_nexus - INFO - Successfully seeded 529027 records into table 'resource_transfers'.
+2026-07-08 19:11:55,422 - smarthealth_nexus - INFO - Seeding table 'disease_trends' from CSV...
+2026-07-08 19:12:03,138 - smarthealth_nexus - INFO - Successfully seeded 157469 records into table 'disease_trends'.
+2026-07-08 19:12:03,138 - smarthealth_nexus - INFO - Seeding table 'weather_data' from CSV...
+2026-07-08 19:12:04,231 - smarthealth_nexus - INFO - Successfully seeded 25550 records into table 'weather_data'.
+2026-07-08 19:12:04,231 - smarthealth_nexus - INFO - Database seeding process completed successfully.
+2026-07-08 19:14:17,922 - smarthealth_nexus - ERROR - Unhandled system exception on /api/v1/auth/register: 1 validation error:
+  {'type': 'int_type', 'loc': ('response', 'id'), 'msg': 'Input should be a valid integer', 'input': UUID('5e61e42a-3bcb-44b7-aa65-7adb61218f78')}
+
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/routes/auth.py", line 15, in register
+    POST /api/v1/auth/register
+Traceback (most recent call last):
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/main.py", line 72, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 1753, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 2738, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 1773, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 1264, in handle
+    await app(scope, receive, send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 711, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 316, in serialize_response
+    raise ResponseValidationError(
+    ...<3 lines>...
+    )
+fastapi.exceptions.ResponseValidationError: 1 validation error:
+  {'type': 'int_type', 'loc': ('response', 'id'), 'msg': 'Input should be a valid integer', 'input': UUID('5e61e42a-3bcb-44b7-aa65-7adb61218f78')}
+
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/routes/auth.py", line 15, in register
+    POST /api/v1/auth/register
+2026-07-08 19:14:24,196 - smarthealth_nexus - WARNING - HTTP exception occurred on path /api/v1/auth/register: A user with this email address already exists in the district database.
+2026-07-08 19:14:31,764 - smarthealth_nexus - ERROR - Unhandled system exception on /api/v1/auth/login: 1 validation error for UserResponse
+id
+  Input should be a valid integer [type=int_type, input_value=UUID('5e61e42a-3bcb-44b7-aa65-7adb61218f78'), input_type=UUID]
+    For further information visit https://errors.pydantic.dev/2.13/v/int_type
+Traceback (most recent call last):
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/main.py", line 72, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 1753, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 2738, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 1773, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 1264, in handle
+    await app(scope, receive, send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/routes/auth.py", line 51, in login
+    user_response = UserResponse(
+        id=user.id,
+    ...<3 lines>...
+        created_at=user.created_at
+    )
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/pydantic/main.py", line 263, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for UserResponse
+id
+  Input should be a valid integer [type=int_type, input_value=UUID('5e61e42a-3bcb-44b7-aa65-7adb61218f78'), input_type=UUID]
+    For further information visit https://errors.pydantic.dev/2.13/v/int_type
+2026-07-08 19:20:39,261 - smarthealth_nexus - WARNING - HTTP exception occurred on path /api/v1/auth/login: Incorrect email or password.
+2026-07-08 19:21:20,439 - smarthealth_nexus - WARNING - HTTP exception occurred on path /api/v1/auth/login: Incorrect email or password.
+2026-07-08 19:21:32,215 - smarthealth_nexus - WARNING - HTTP exception occurred on path /api/v1/auth/register: A user with this email address already exists in the district database.
+2026-07-08 19:21:37,658 - smarthealth_nexus - WARNING - HTTP exception occurred on path /api/v1/auth/login: Incorrect email or password.
+2026-07-08 19:21:40,175 - smarthealth_nexus - WARNING - HTTP exception occurred on path /api/v1/auth/login: Incorrect email or password.
+2026-07-08 19:26:12,999 - smarthealth_nexus - ERROR - Unhandled system exception on /api/v1/auth/login: 1 validation error for UserResponse
+id
+  Input should be a valid integer [type=int_type, input_value=UUID('5d4b08fb-3636-4d78-acf1-7a481126800b'), input_type=UUID]
+    For further information visit https://errors.pydantic.dev/2.13/v/int_type
+Traceback (most recent call last):
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/main.py", line 72, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 1753, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 2738, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 1773, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 1264, in handle
+    await app(scope, receive, send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/routes/auth.py", line 51, in login
+    user_response = UserResponse(
+        id=user.id,
+    ...<3 lines>...
+        created_at=user.created_at
+    )
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/pydantic/main.py", line 263, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for UserResponse
+id
+  Input should be a valid integer [type=int_type, input_value=UUID('5d4b08fb-3636-4d78-acf1-7a481126800b'), input_type=UUID]
+    For further information visit https://errors.pydantic.dev/2.13/v/int_type
+2026-07-08 19:26:15,955 - smarthealth_nexus - ERROR - Unhandled system exception on /api/v1/auth/login: 1 validation error for UserResponse
+id
+  Input should be a valid integer [type=int_type, input_value=UUID('5d4b08fb-3636-4d78-acf1-7a481126800b'), input_type=UUID]
+    For further information visit https://errors.pydantic.dev/2.13/v/int_type
+Traceback (most recent call last):
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/main.py", line 72, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 1753, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 2738, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 1773, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 1264, in handle
+    await app(scope, receive, send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/routes/auth.py", line 51, in login
+    user_response = UserResponse(
+        id=user.id,
+    ...<3 lines>...
+        created_at=user.created_at
+    )
+  File "/Users/deepakkumar/Downloads/SmartHealth Nexus/backend/.venv/lib/python3.13/site-packages/pydantic/main.py", line 263, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for UserResponse
+id
+  Input should be a valid integer [type=int_type, input_value=UUID('5d4b08fb-3636-4d78-acf1-7a481126800b'), input_type=UUID]
+    For further information visit https://errors.pydantic.dev/2.13/v/int_type
+2026-07-08 19:27:06,256 - smarthealth_nexus - INFO - Centralized logging system initialized.
+2026-07-14 09:43:09,502 - smarthealth_nexus - INFO - Centralized logging system initialized.
+2026-07-14 09:44:47,956 - smarthealth_nexus - WARNING - HTTP exception occurred on path /api/v1/auth/register: A user with this email address already exists in the district database.

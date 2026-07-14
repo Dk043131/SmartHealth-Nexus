@@ -1,0 +1,18 @@
+simulation:
+  # Random Seed for repeatability
+  seed: 42
+
+  # Duration of the historical simulation in days (e.g. 365, 1095, 1825)
+  days: 365
+
+  # Hospital Node Counts
+  hospitals:
+    phc_count: 50
+    chc_count: 15
+    gov_hospital_count: 5
+
+  # Clinical and Environmental severity factors
+  weather_severity: "Normal"       # Normal, High, Critical (affects temperature swings and rainfall severity)
+  disease_probability: 0.15          # Probability of a patient having a major seasonal outbreak disease
+  medicine_consumption_rate: 1.0     # Baseline scalar for daily medicine depletion
+  emergency_frequency: 0.05          # Daily chance of a facility experiencing supply chain delays or low-stock alerts

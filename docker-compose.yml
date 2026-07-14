@@ -1,0 +1,78 @@
+version: '3.8'
+
+services:
+  # Database Service
+  db:
+    image: postgres:15-alpine
+    container_name: smarthealth_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres_secure_pass
+      POSTGRES_DB: smarthealth_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  # FastAPI Backend Service
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: smarthealth_backend
+    restart: always
+    environment:
+      - DATABASE_URL=${DATABASE_URL:-postgresql://postgres:postgres_secure_pass@db:5432/smarthealth_db}
+      - DB_HOST=${DB_HOST:-}
+      - DB_PORT=${DB_PORT:-5432}
+      - DB_USER=${DB_USER:-}
+      - DB_API_KEY=${DB_API_KEY:-}
+      - DB_TOKEN=${DB_TOKEN:-}
+      - DB_NAME=${DB_NAME:-}
+      - DB_SSL_MODE=${DB_SSL_MODE:-require}
+      - SECRET_KEY=district_health_nexus_secret_jwt_key_2026
+      - ENV=production
+      - PROJECT_NAME=SmartHealth Nexus
+      - ACCESS_TOKEN_EXPIRE_MINUTES=60
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    volumes:
+      - backend_logs:/app/backend/logs
+      - backend_uploads:/app/backend/uploads
+
+  # React Frontend Service
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: smarthealth_frontend
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+  # pgAdmin Service for Database Administration
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: smarthealth_pgadmin
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@smarthealth.local
+      PGADMIN_DEFAULT_PASSWORD: admin_secure_pass
+    ports:
+      - "5050:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+      - ./servers.json:/pgadmin4/servers.json
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:
+  backend_logs:
+  backend_uploads:
+  pgadmin_data:

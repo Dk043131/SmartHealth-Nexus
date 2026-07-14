@@ -1,0 +1,33 @@
+# Databases
+*.db
+*.sqlite
+smarthealth_nexus.db
+backend/smarthealth_nexus.db
+backend/seeds/data/
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+
+# Node dependencies
+node_modules/
+dist/
+
+# Credentials & environment configs
+.env
+.env.local
+.env.*.local
+servers.json
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Python caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
