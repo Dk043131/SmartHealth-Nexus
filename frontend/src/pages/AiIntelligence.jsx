@@ -64,7 +64,7 @@ export default function AiIntelligence() {
     setLoading(true);
     Promise.all([
       hospitalService.getAllHospitals(),
-      inventoryService.getMedicines(),
+      inventoryService.getAllMedicines(),
       doctorService.getAllDoctors()
     ])
       .then(([hospRes, medRes, docRes]) => {
@@ -241,7 +241,7 @@ export default function AiIntelligence() {
               className="bg-white border border-slate-200/80 rounded-xl px-3 py-1.5 text-xs text-slate-700 focus:outline-none"
             >
               {medicines.map(m => (
-                <option key={m.id} value={m.id}>{m.name}</option>
+                <option key={m.id} value={m.id}>{m.medicine_name}</option>
               ))}
             </select>
           </div>
