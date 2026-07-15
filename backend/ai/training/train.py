@@ -8,7 +8,6 @@ import numpy as np
 from datetime import datetime
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.ensemble import RandomForestRegressor, RandomForestClassifier, GradientBoostingRegressor, GradientBoostingClassifier
-from xgboost import XGBRegressor, XGBClassifier
 
 from backend.ai.preprocessing.pipeline import PreprocessingPipeline
 from backend.ai.feature_engineering.features import FeatureStore
@@ -64,8 +63,7 @@ class ModelRegistry:
         # Candidate models
         candidates = {
             "RandomForest": RandomForestRegressor(n_estimators=10, random_state=42),
-            "GradientBoosting": GradientBoostingRegressor(n_estimators=10, random_state=42),
-            "XGBoost": XGBRegressor(n_estimators=10, random_state=42)
+            "GradientBoosting": GradientBoostingRegressor(n_estimators=10, random_state=42)
         }
         
         best_model = None
@@ -127,8 +125,7 @@ class ModelRegistry:
         
         candidates = {
             "RandomForestClassifier": RandomForestClassifier(n_estimators=10, random_state=42),
-            "GradientBoostingClassifier": GradientBoostingClassifier(n_estimators=10, random_state=42),
-            "XGBClassifier": XGBClassifier(n_estimators=10, random_state=42)
+            "GradientBoostingClassifier": GradientBoostingClassifier(n_estimators=10, random_state=42)
         }
         
         best_model = None
@@ -189,8 +186,7 @@ class ModelRegistry:
         
         candidates = {
             "RandomForest": RandomForestRegressor(n_estimators=10, random_state=42),
-            "GradientBoosting": GradientBoostingRegressor(n_estimators=10, random_state=42),
-            "XGBoost": XGBRegressor(n_estimators=10, random_state=42)
+            "GradientBoosting": GradientBoostingRegressor(n_estimators=10, random_state=42)
         }
         
         best_model = None
@@ -249,8 +245,7 @@ class ModelRegistry:
         
         candidates = {
             "RandomForest": RandomForestRegressor(n_estimators=10, random_state=42),
-            "GradientBoosting": GradientBoostingRegressor(n_estimators=10, random_state=42),
-            "XGBoost": XGBRegressor(n_estimators=10, random_state=42)
+            "GradientBoosting": GradientBoostingRegressor(n_estimators=10, random_state=42)
         }
         
         best_model = None
@@ -309,8 +304,7 @@ class ModelRegistry:
         
         candidates = {
             "RandomForest": RandomForestRegressor(n_estimators=10, random_state=42),
-            "GradientBoosting": GradientBoostingRegressor(n_estimators=10, random_state=42),
-            "XGBoost": XGBRegressor(n_estimators=10, random_state=42)
+            "GradientBoosting": GradientBoostingRegressor(n_estimators=10, random_state=42)
         }
         
         best_model = None
@@ -370,8 +364,7 @@ class ModelRegistry:
         
         candidates = {
             "RandomForest": RandomForestRegressor(n_estimators=10, random_state=42),
-            "GradientBoosting": GradientBoostingRegressor(n_estimators=10, random_state=42),
-            "XGBoost": XGBRegressor(n_estimators=10, random_state=42)
+            "GradientBoosting": GradientBoostingRegressor(n_estimators=10, random_state=42)
         }
         
         best_model = None

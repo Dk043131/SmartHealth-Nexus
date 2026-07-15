@@ -1,12 +1,12 @@
 {
   "model_type": "GradientBoosting",
-  "best_params": "{'alpha': 0.9, 'ccp_alpha': 0.0, 'criterion': 'friedman_mse', 'init': None, 'learning_rate': 0.1, 'loss': 'squared_error', 'max_depth': 3, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 10, 'n_iter_no_change': None, 'random_state': 42, 'subsample': 1.0, 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': 0, 'warm_start': False}",
+  "best_params": "{'alpha': 0.9, 'ccp_alpha': 0.0, 'criterion': 'deprecated', 'init': None, 'learning_rate': 0.1, 'loss': 'squared_error', 'max_depth': 3, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 10, 'n_iter_no_change': None, 'random_state': 42, 'subsample': 1.0, 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': 0, 'warm_start': False}",
   "validation_scores": {
-    "MAE": 0.2038,
-    "MSE": 0.0578,
-    "RMSE": 0.2403,
-    "R2": -0.071,
-    "MAPE": 63.5324
+    "MAE": 0.2078,
+    "MSE": 0.0602,
+    "RMSE": 0.2453,
+    "R2": -0.1959,
+    "MAPE": 51.2505
   },
-  "training_date": "2026-07-04 16:16:33"
+  "training_date": "2026-07-15 10:33:39"
 }
