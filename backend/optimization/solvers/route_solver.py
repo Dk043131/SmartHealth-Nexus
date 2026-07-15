@@ -49,7 +49,7 @@ class RouteRoutingSolver:
             except (nx.NetworkXNoPath, nx.NodeNotFound):
                 # Fallback to direct Haversine distance
                 base_h = hosp_map[base_h_id]
-                path_length = calculate_haversine_distance(base_h["latitude"], base_h["longitude"], target_h["latitude"], target_h["longitude"])
+                path_length = calculate_haversine_distance(base_h["latitude"], base_h["longitude"], target_hosp["latitude"], target_hosp["longitude"])
                 path = [base_h_id, target_hospital_id.replace("-", "")]
 
             dispatch_candidates.append({

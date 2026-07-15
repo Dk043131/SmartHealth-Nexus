@@ -70,7 +70,7 @@ class OptimizationService:
                     "id": str(a.id),
                     "vehicle_number": a.vehicle_number,
                     "driver_name": a.driver_name,
-                    "driver_phone": a.driver_phone,
+                    "driver_phone": None,
                     "status": a.status.value if hasattr(a.status, "value") else a.status,
                     "hospital_id": str(a.hospital_id) if a.hospital_id else None
                 }
@@ -92,7 +92,7 @@ class OptimizationService:
             medicines = [
                 {
                     "id": str(m.id),
-                    "name": m.name,
+                    "name": m.medicine_name,
                     "category": m.category,
                     "minimum_stock": m.minimum_stock
                 }
