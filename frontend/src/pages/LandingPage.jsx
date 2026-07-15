@@ -96,44 +96,66 @@ export default function LandingPage() {
             </div>
           </div>
 
-          {/* Graphical Right Panel */}
+          {/* Graphical Right Panel - High-Fidelity Mock Command Dashboard */}
           <div className="md:col-span-5 flex justify-center animate-fade-in-up animation-delay-100">
             <div className="relative w-full max-w-md aspect-square">
-              {/* Decorative glass elements */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-teal-500/10 to-blue-500/15 rounded-3xl -rotate-3 border border-teal-500/10"></div>
+              {/* Decorative glows */}
+              <div className="absolute -inset-4 bg-gradient-to-tr from-teal-500 to-blue-600 rounded-3xl opacity-20 blur-2xl animate-pulse"></div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-teal-500/10 to-blue-500/15 rounded-3xl -rotate-2 border border-teal-500/10"></div>
               
-              <div className="relative h-full glass-card rounded-3xl p-8 flex flex-col justify-between border-slate-200/80 shadow-2xl">
-                <div className="flex items-center justify-between">
+              <div className="relative h-full glass-card card-glow-teal rounded-3xl p-6 flex flex-col justify-between border-slate-200/80 shadow-2xl bg-white/80">
+                {/* Header */}
+                <div className="flex items-center justify-between pb-4 border-b border-slate-100">
                   <div className="flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-teal-500 animate-pulse"></span>
-                    <span className="text-xs font-semibold text-slate-500 uppercase tracking-widest">NEXUS MAIN GATEWAY</span>
+                    <span className="w-2.5 h-2.5 rounded-full bg-teal-500 animate-ping"></span>
+                    <span className="text-[10px] font-bold text-slate-800 uppercase tracking-widest">NEXUS COMMAND NODE</span>
                   </div>
-                  <Layers className="w-5 h-5 text-slate-400" />
+                  <div className="flex gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-slate-300"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-slate-300"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-slate-300"></span>
+                  </div>
                 </div>
 
-                {/* Central Visual Graphic */}
-                <div className="my-8 flex flex-col items-center justify-center flex-1">
-                  <div className="w-24 h-24 rounded-2xl bg-gradient-to-tr from-teal-500 to-blue-600 flex items-center justify-center shadow-2xl shadow-teal-500/30 mb-6">
-                    <Activity className="w-12 h-12 text-white animate-pulse" />
+                {/* Dashboard Stats Mock Grid */}
+                <div className="my-6 space-y-4 flex-1 flex flex-col justify-center">
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-slate-50/60 border border-slate-100 rounded-2xl p-4 text-left">
+                      <span className="text-[10px] font-bold text-slate-400 block uppercase tracking-wider">District Sync</span>
+                      <span className="text-lg font-black text-slate-800 mt-1 block">70 Nodes</span>
+                      <span className="text-[9px] text-teal-600 font-semibold block mt-0.5">● 100% Operational</span>
+                    </div>
+                    <div className="bg-slate-50/60 border border-slate-100 rounded-2xl p-4 text-left">
+                      <span className="text-[10px] font-bold text-slate-400 block uppercase tracking-wider">Alert Level</span>
+                      <span className="text-lg font-black text-rose-600 mt-1 block">Normal</span>
+                      <span className="text-[9px] text-slate-400 block mt-0.5">0 Critical Surges</span>
+                    </div>
                   </div>
-                  <h3 className="text-slate-800 font-bold text-lg text-center">Autonomous Coordination</h3>
-                  <p className="text-slate-500 text-xs text-center max-w-xs mt-2">
-                    Continuously synchronizing primary care data points across the district for centralized analysis and threat notifications.
-                  </p>
+
+                  {/* Flow Simulation Widget */}
+                  <div className="bg-gradient-to-r from-slate-900 to-slate-850 rounded-2xl p-4 text-left text-white shadow-lg relative overflow-hidden">
+                    <div className="absolute right-0 bottom-0 top-0 w-24 bg-gradient-to-l from-teal-500/10 to-transparent"></div>
+                    <span className="text-[9px] font-bold text-teal-400 uppercase tracking-widest">Active Redistribution</span>
+                    <h4 className="text-xs font-bold mt-1">Medicine Transfer #4920</h4>
+                    <p className="text-[10px] text-slate-300 mt-1">Socio-economic re-routing of Paracetamol active from Hub hospital CHC-01.</p>
+                    <div className="w-full bg-slate-800 rounded-full h-1 mt-3">
+                      <div className="bg-gradient-to-r from-teal-400 to-blue-500 h-1 rounded-full w-3/4 animate-pulse"></div>
+                    </div>
+                  </div>
                 </div>
 
-                {/* System Stats Block */}
-                <div className="bg-slate-50/80 border border-slate-100/80 rounded-2xl p-4 flex justify-between items-center text-left">
+                {/* Footer Security badge */}
+                <div className="bg-teal-500/5 border border-teal-500/10 rounded-2xl p-3.5 flex justify-between items-center text-left">
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-teal-500/10 flex items-center justify-center text-teal-600">
+                    <div className="w-8 h-8 rounded-xl bg-teal-500/10 flex items-center justify-center text-teal-600 shadow-inner">
                       <ShieldCheck className="w-4 h-4" />
                     </div>
                     <div>
-                      <span className="block text-xs text-slate-500 font-medium">Gateway Protocol</span>
-                      <span className="text-xs font-bold text-slate-700">AES-256 Auth Enabled</span>
+                      <span className="block text-[9px] text-slate-400 font-bold uppercase tracking-wider">Secure authorization</span>
+                      <span className="text-xs font-bold text-slate-700">Multi-Role Auth Active</span>
                     </div>
                   </div>
-                  <span className="text-xs font-bold text-teal-600 px-2 py-1 rounded bg-teal-50">Active</span>
+                  <span className="text-[10px] font-bold text-teal-600 px-2.5 py-1 rounded-lg bg-teal-500/10 border border-teal-500/15">Authorized</span>
                 </div>
               </div>
             </div>

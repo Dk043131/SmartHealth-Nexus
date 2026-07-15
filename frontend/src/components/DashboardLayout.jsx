@@ -198,39 +198,39 @@ export default function DashboardLayout({ children }) {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50/50 flex flex-col">
+    <div className="min-h-screen bg-slate-50/50 flex flex-col font-sans">
       {/* Top Navbar */}
-      <header className="h-16 border-b border-slate-200/60 bg-white/70 backdrop-blur-md sticky top-0 z-40 px-6 flex items-center justify-between w-full">
+      <header className="h-16 border-b border-slate-200/50 bg-white/80 backdrop-blur-lg sticky top-0 z-40 px-6 flex items-center justify-between w-full shadow-sm shadow-slate-100/40">
         {/* Left: Mobile hamburger + Project name */}
         <div className="flex items-center gap-3">
           <button 
             onClick={() => setMobileMenuOpen(true)}
-            className="p-2 rounded-lg hover:bg-slate-100 md:hidden transition"
+            className="p-2 rounded-xl hover:bg-slate-50 md:hidden transition border border-slate-100"
           >
             <Menu className="w-5 h-5 text-slate-600" />
           </button>
           
-          <div className="hidden md:flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-teal-500 to-blue-600 flex items-center justify-center shadow-md shadow-teal-500/10">
-              <Activity className="w-4 h-4 text-white animate-pulse" />
+          <div className="hidden md:flex items-center gap-2.5">
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-teal-500 to-blue-600 flex items-center justify-center shadow-lg shadow-teal-500/15 border border-white/20">
+              <Activity className="w-4.5 h-4.5 text-white animate-pulse" />
             </div>
             <div>
-              <span className="font-bold text-slate-800 text-sm tracking-tight">SmartHealth</span>
-              <span className="font-extrabold text-teal-600 text-sm ml-0.5 tracking-tight">Nexus</span>
+              <span className="font-extrabold text-slate-800 text-sm tracking-tight">SmartHealth</span>
+              <span className="font-black text-teal-600 text-sm ml-0.5 tracking-tight">Nexus</span>
             </div>
           </div>
 
           {/* System Health Pulse Indicator */}
-          <div className="flex items-center gap-2 bg-emerald-50 border border-emerald-100 px-3 py-1 rounded-full text-[11px] font-semibold text-emerald-800 ml-4">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span className="hidden sm:inline">District Core: Online</span>
+          <div className="flex items-center gap-2 bg-emerald-500/5 border border-emerald-500/10 px-3.5 py-1 rounded-full text-[10px] font-bold text-emerald-700 ml-4 shadow-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
+            <span className="hidden sm:inline">District Core: Connected</span>
             <span className="sm:hidden">Online</span>
           </div>
 
           {/* Sync Trigger button */}
           <button 
             onClick={triggerSync}
-            className="p-1.5 rounded-lg hover:bg-slate-100 text-slate-400 hover:text-slate-600 transition"
+            className="p-1.5 rounded-lg hover:bg-slate-50 text-slate-400 hover:text-slate-600 transition border border-transparent hover:border-slate-200/40"
             title="Sync telemetry data"
           >
             <RefreshCw className={`w-3.5 h-3.5 ${syncing ? 'animate-spin text-teal-600' : ''}`} />
@@ -241,7 +241,7 @@ export default function DashboardLayout({ children }) {
         <div className="flex items-center gap-4">
           {/* User Role Badge */}
           {user && (
-            <span className={`px-2.5 py-0.5 border rounded-full text-xs font-semibold uppercase tracking-wider ${badge.classes}`}>
+            <span className={`px-3 py-1 border rounded-full text-[10px] font-extrabold uppercase tracking-wider shadow-sm ${badge.classes}`}>
               {badge.text}
             </span>
           )}
@@ -250,14 +250,14 @@ export default function DashboardLayout({ children }) {
           <div className="relative">
             <button 
               onClick={() => setProfileDropdownOpen(!profileDropdownOpen)}
-              className="flex items-center gap-2.5 p-1.5 hover:bg-slate-50 border border-transparent hover:border-slate-200/60 rounded-xl transition cursor-pointer"
+              className="flex items-center gap-2.5 p-1.5 hover:bg-slate-50 border border-transparent hover:border-slate-200/50 rounded-2xl transition cursor-pointer"
             >
-              <div className="w-8 h-8 rounded-lg bg-teal-500/10 text-teal-700 flex items-center justify-center font-bold text-sm">
+              <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-teal-500/10 to-blue-600/10 text-teal-700 flex items-center justify-center font-bold text-xs border border-teal-500/20">
                 {user?.name?.slice(0, 2).toUpperCase() || 'US'}
               </div>
               <div className="text-left hidden sm:block">
                 <span className="block text-xs font-bold text-slate-700 leading-tight">{user?.name}</span>
-                <span className="block text-[10px] text-slate-400 leading-none">{user?.email}</span>
+                <span className="block text-[10px] text-slate-400 leading-none mt-0.5">{user?.email}</span>
               </div>
               <ChevronDown className="w-4 h-4 text-slate-400" />
             </button>
@@ -271,16 +271,16 @@ export default function DashboardLayout({ children }) {
                 />
                 
                 {/* Dropdown Card */}
-                <div className="absolute right-0 mt-2 w-52 bg-white rounded-2xl border border-slate-200/80 shadow-xl py-2 z-50 animate-fade-in-up">
-                  <div className="px-4 py-2 border-b border-slate-100 text-left">
-                    <span className="block text-xs font-semibold text-slate-400">Account Credentials</span>
-                    <span className="block text-xs font-bold text-slate-700 truncate mt-0.5">{user?.name}</span>
+                <div className="absolute right-0 mt-2 w-52 bg-white/95 backdrop-blur-md rounded-2xl border border-slate-200/80 shadow-xl py-2 z-50 animate-fade-in-up">
+                  <div className="px-4 py-2.5 border-b border-slate-100 text-left">
+                    <span className="block text-[9px] font-extrabold text-slate-400 uppercase tracking-widest">Account Credentials</span>
+                    <span className="block text-xs font-bold text-slate-700 truncate mt-1">{user?.name}</span>
                     <span className="block text-[10px] text-slate-400 truncate">{user?.email}</span>
                   </div>
                   
                   <button 
                     onClick={handleLogout}
-                    className="w-full text-left px-4 py-2 text-xs text-red-600 hover:bg-red-50/50 flex items-center gap-2 font-semibold transition"
+                    className="w-full text-left px-4 py-2 text-xs text-red-600 hover:bg-red-50/50 flex items-center gap-2 font-bold transition"
                   >
                     <LogOut className="w-4 h-4" /> Log Out
                   </button>
@@ -294,9 +294,9 @@ export default function DashboardLayout({ children }) {
       {/* Main Workspace Frame */}
       <div className="flex-1 flex w-full">
         {/* Desktop Sidebar (Sidebar hidden on mobile, visible on medium screens) */}
-        <aside className="w-64 border-r border-slate-200/60 bg-white/70 backdrop-blur-md hidden md:flex flex-col p-4 shrink-0 justify-between">
+        <aside className="w-64 border-r border-slate-200/50 bg-white/80 backdrop-blur-lg hidden md:flex flex-col p-4 shrink-0 justify-between">
           <div className="space-y-6">
-            <span className="text-[10px] font-bold text-slate-400 tracking-widest uppercase block pl-3">
+            <span className="text-[9px] font-extrabold text-slate-400 tracking-widest uppercase block pl-3">
               District Telemetry
             </span>
             <nav className="space-y-1">
@@ -308,7 +308,7 @@ export default function DashboardLayout({ children }) {
                   <div key={idx} className="relative">
                     {item.disabled ? (
                       <div 
-                        className="w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-slate-400 cursor-not-allowed opacity-60 text-sm"
+                        className="w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-slate-400 cursor-not-allowed opacity-60 text-xs"
                         title={`${item.name} is a future module`}
                       >
                         <div className="flex items-center gap-2.5">
@@ -324,10 +324,10 @@ export default function DashboardLayout({ children }) {
                     ) : (
                       <Link
                         to={item.path}
-                        className={`w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm font-semibold transition ${
+                        className={`w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-xs font-bold transition ${
                           isActive 
-                            ? 'bg-teal-50 text-teal-700 border-l-2 border-teal-600' 
-                            : 'text-slate-600 hover:bg-slate-50'
+                            ? 'bg-gradient-to-r from-teal-500/10 to-blue-500/5 text-teal-700 border-l-4 border-teal-600 shadow-sm shadow-teal-500/5' 
+                            : 'text-slate-650 hover:bg-slate-50/85 hover:text-slate-900'
                         }`}
                       >
                         <IconComponent className="w-4 h-4 shrink-0" />

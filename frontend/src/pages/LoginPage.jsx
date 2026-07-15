@@ -107,29 +107,33 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen w-full flex flex-col justify-center items-center gradient-mesh px-4 py-8 relative">
+    <div className="min-h-screen w-full flex flex-col justify-center items-center gradient-mesh px-4 py-8 relative overflow-hidden">
+      {/* Decorative backlights */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-teal-400/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
       {/* Back button */}
       <Link
         to="/"
-        className="absolute top-6 left-6 inline-flex items-center gap-2 text-slate-500 hover:text-slate-700 text-sm font-medium transition"
+        className="absolute top-6 left-6 inline-flex items-center gap-2 text-slate-500 hover:text-slate-700 text-sm font-semibold transition"
       >
         <ArrowLeft className="w-4 h-4" /> Back to Landing Page
       </Link>
 
-      <div className="w-full max-w-md animate-fade-in-up">
+      <div className="w-full max-w-md animate-fade-in-up relative z-10">
         {/* Logo and title */}
-        <div className="flex flex-col items-center mb-8">
-          <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-teal-500 to-blue-600 flex items-center justify-center shadow-lg shadow-teal-500/10 mb-3">
-            <Activity className="w-6 h-6 text-white" />
+        <div className="flex flex-col items-center mb-6">
+          <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-teal-500 to-blue-600 flex items-center justify-center shadow-xl shadow-teal-500/20 mb-3 border border-white/20">
+            <Activity className="w-7 h-7 text-white animate-pulse" />
           </div>
-          <h2 className="text-2xl font-extrabold text-slate-800 tracking-tight">SmartHealth Nexus Gateway</h2>
-          <p className="text-slate-500 text-xs mt-1 uppercase tracking-widest font-semibold">
+          <h2 className="text-2xl font-black text-slate-800 tracking-tight">SmartHealth Nexus Gateway</h2>
+          <p className="text-slate-500 text-[10px] mt-1 uppercase tracking-widest font-extrabold">
             District Command Authorization
           </p>
         </div>
 
         {/* Auth Box */}
-        <div className="glass-card rounded-3xl p-8 border-slate-200/80 shadow-2xl relative overflow-hidden">
+        <div className="glass-card card-glow-teal rounded-3xl p-8 border-slate-200/80 shadow-2xl relative overflow-hidden bg-white/75">
           {/* Top line decoration */}
           <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-teal-500 via-blue-500 to-indigo-600"></div>
 

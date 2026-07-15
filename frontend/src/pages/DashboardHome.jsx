@@ -182,10 +182,10 @@ export default function DashboardHome() {
         
         {/* District health score Circular Gauge widget */}
         <div className="lg:col-span-4 flex flex-col">
-          <div className="glass-card rounded-3xl p-6 border-slate-200/80 shadow-sm text-center flex-1 flex flex-col justify-between items-center relative overflow-hidden bg-white">
+          <div className="glass-card rounded-3xl p-6 border-slate-200/80 shadow-md text-center flex-1 flex flex-col justify-between items-center relative overflow-hidden bg-white/90">
             <div className="w-full text-left">
-              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Health Rating index</span>
-              <h3 className="text-sm font-bold text-slate-800 uppercase tracking-wider mt-1">District Health Index</h3>
+              <span className="text-[9px] font-extrabold text-slate-400 uppercase tracking-widest block">Health Rating index</span>
+              <h3 className="text-sm font-black text-slate-800 uppercase tracking-wider mt-1">District Health Index</h3>
             </div>
             
             <div className="relative w-40 h-40 flex items-center justify-center my-6">
@@ -226,24 +226,24 @@ export default function DashboardHome() {
         {/* Dynamic KPI Stats Cards */}
         <div className="lg:col-span-8 grid sm:grid-cols-2 gap-6">
           {[
-            { title: "Connected Health Facility Nodes", value: kpis.total_hospitals, suffix: "Active Node Registry", icon: Building2, color: "text-slate-800", bg: "bg-slate-50 text-slate-700" },
-            { title: "Today's Patient Registry admissions", value: kpis.total_patients.toLocaleString(), suffix: "Cumulative district patients", icon: Users, color: "text-teal-600", bg: "bg-teal-50 text-teal-700" },
-            { title: "Aggregated Medicine Availability", value: `${kpis.medicine_availability_pct}%`, suffix: "Medicines stock availability rating", icon: Activity, color: "text-blue-600", bg: "bg-blue-50 text-blue-700" },
-            { title: "Critical Care Bed Occupancy", value: `${kpis.bed_occupancy_pct}%`, suffix: "District bed occupancy metrics", icon: AlertTriangle, color: "text-rose-600", bg: "bg-rose-50 text-rose-700" }
+            { title: "Connected Health Facility Nodes", value: kpis.total_hospitals, suffix: "Active Node Registry", icon: Building2, color: "text-slate-800", bg: "bg-slate-50 text-slate-700", border: "border-t-2 border-t-slate-400" },
+            { title: "Today's Patient Registry admissions", value: kpis.total_patients.toLocaleString(), suffix: "Cumulative district patients", icon: Users, color: "text-teal-650", bg: "bg-teal-50 text-teal-700", border: "border-t-2 border-t-teal-500" },
+            { title: "Aggregated Medicine Availability", value: `${kpis.medicine_availability_pct}%`, suffix: "Medicines stock availability rating", icon: Activity, color: "text-blue-600", bg: "bg-blue-50 text-blue-700", border: "border-t-2 border-t-blue-500" },
+            { title: "Critical Care Bed Occupancy", value: `${kpis.bed_occupancy_pct}%`, suffix: "District bed occupancy metrics", icon: AlertTriangle, color: "text-rose-600", bg: "bg-rose-50 text-rose-700", border: "border-t-2 border-t-rose-500" }
           ].map((card, idx) => {
             const IconComp = card.icon;
             return (
-              <div key={idx} className="glass-card rounded-3xl p-6 border-slate-200/80 shadow-sm flex flex-col justify-between h-40 relative group overflow-hidden bg-white hover:shadow-md transition">
+              <div key={idx} className={`glass-card glass-card-hover rounded-3xl p-6 border-slate-200/80 shadow-md flex flex-col justify-between h-40 relative group overflow-hidden bg-white/90 ${card.border}`}>
                 <div className="flex justify-between items-start">
                   <div className="space-y-1">
-                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">{card.title}</span>
-                    <span className={`text-3xl font-black ${card.color} tracking-tight block`}>{card.value}</span>
+                    <span className="text-[9px] font-extrabold text-slate-400 uppercase tracking-widest block">{card.title}</span>
+                    <span className={`text-3xl font-black ${card.color} tracking-tight block mt-1`}>{card.value}</span>
                   </div>
-                  <div className={`w-10 h-10 rounded-2xl ${card.bg} flex items-center justify-center shrink-0`}>
+                  <div className={`w-10 h-10 rounded-2xl ${card.bg} flex items-center justify-center shrink-0 shadow-inner border border-current/10`}>
                     <IconComp className="w-5 h-5" />
                   </div>
                 </div>
-                <div className="text-[10px] text-slate-500 font-semibold uppercase tracking-wider mt-4 pt-3 border-t border-slate-100">
+                <div className="text-[9px] text-slate-400 font-bold uppercase tracking-widest mt-4 pt-3 border-t border-slate-100">
                   {card.suffix}
                 </div>
               </div>
