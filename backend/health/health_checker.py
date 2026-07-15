@@ -1,6 +1,7 @@
 import os
 import psutil
 from typing import Dict, Any
+from sqlalchemy import text
 from backend.core.database import SessionLocal
 from backend.ai.prediction.services import PredictionService
 
@@ -32,7 +33,7 @@ class SystemHealthChecker:
         """
         db = SessionLocal()
         try:
-            db.execute(text("SELECT 1") if 'text' in globals() else "SELECT 1")
+            db.execute(text("SELECT 1"))
             return True
         except Exception:
             return False
