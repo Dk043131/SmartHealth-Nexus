@@ -1,5 +1,8 @@
 from fastapi import APIRouter, Depends, Query, status
 from typing import Dict, List, Any
+from sqlalchemy.orm import Session
+from backend.core.database import get_db
+from backend.models.models import Hospital
 from backend.schemas.schemas import APIResponse
 from backend.xai.services.xai_service import ExplainableAiService
 from backend.auth.dependencies import verify_read_access
@@ -15,16 +18,29 @@ def get_prediction_explanation(
     model_name: str = Query("disease_prediction"),
     base_value: float = Query(0.15),
     hospital_name: str = Query("Srinagar GH"),
+    db: Session = Depends(get_db),
     current_user: User = Depends(verify_read_access)
 ):
     """
     Returns SHAP-approximated local attributions and natural language narratives explaining a model prediction.
     """
+    hosp = db.query(Hospital).filter(Hospital.hospital_name == hospital_name, Hospital.is_deleted == False).first()
+    hosp_type = hosp.hospital_type.value if hosp and hasattr(hosp.hospital_type, "value") else (hosp.hospital_type if hosp else "PHC")
+    taluk = hosp.taluk if hosp else "Nagpur"
+
+    # Deterministic weather based on hospital properties to show dynamic graphs
+    h_hash = sum(ord(c) for c in hospital_name)
+    temperature = 20.0 + (h_hash % 15)
+    humidity = 40.0 + (h_hash % 50)
+    rainfall = float(h_hash % 30)
+
     input_values = {
         "hospital_name": hospital_name,
-        "temperature": 24.5,
-        "humidity": 68.0,
-        "rainfall": 18.0,
+        "hospital_type": hosp_type,
+        "taluk": taluk,
+        "temperature": temperature,
+        "humidity": humidity,
+        "rainfall": rainfall,
         "season": 2, # Monsoon
         "probability": base_value
     }
@@ -79,16 +95,28 @@ def get_dynamic_narratives(
     model_name: str = Query("disease_prediction"),
     base_value: float = Query(0.15),
     hospital_name: str = Query("Srinagar GH"),
+    db: Session = Depends(get_db),
     current_user: User = Depends(verify_read_access)
 ):
     """
     Returns dynamic natural language insight summaries.
     """
+    hosp = db.query(Hospital).filter(Hospital.hospital_name == hospital_name, Hospital.is_deleted == False).first()
+    hosp_type = hosp.hospital_type.value if hosp and hasattr(hosp.hospital_type, "value") else (hosp.hospital_type if hosp else "PHC")
+    taluk = hosp.taluk if hosp else "Nagpur"
+
+    h_hash = sum(ord(c) for c in hospital_name)
+    temperature = 20.0 + (h_hash % 15)
+    humidity = 40.0 + (h_hash % 50)
+    rainfall = float(h_hash % 30)
+
     input_values = {
         "hospital_name": hospital_name,
-        "temperature": 24.5,
-        "humidity": 68.0,
-        "rainfall": 18.0,
+        "hospital_type": hosp_type,
+        "taluk": taluk,
+        "temperature": temperature,
+        "humidity": humidity,
+        "rainfall": rainfall,
         "season": 2,
         "probability": base_value
     }

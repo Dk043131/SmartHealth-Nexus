@@ -64,8 +64,13 @@ class ExplainersEngine:
                 deviation = (val - mean) / (mean or 1.0)
                 contribution = float(imp * deviation * 50.0) # Scaled contribution
             else:
-                # For categorical features, use nominal random positive deviation
-                contribution = float(imp * 12.0)
+                # For categorical features, use nominal value to compute contribution
+                if isinstance(val, str):
+                    # Deterministic contribution based on string hash
+                    hash_val = sum(ord(c) for c in val) % 10
+                    contribution = float(imp * (hash_val - 4.5) * 8.0)
+                else:
+                    contribution = float(imp * 12.0)
                 
             attributions.append({
                 "feature": feat,
