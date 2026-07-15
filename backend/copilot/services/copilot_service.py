@@ -127,7 +127,7 @@ class CopilotService:
         db = SessionLocal()
         db_qty = 0
         try:
-            med = db.query(Medicine).filter(Medicine.name.ilike(f"%{med_name}%")).first()
+            med = db.query(Medicine).filter(Medicine.medicine_name.ilike(f"%{med_name}%")).first()
             if med:
                 inv = db.query(MedicineInventory).filter(
                     MedicineInventory.medicine_id == med.id,

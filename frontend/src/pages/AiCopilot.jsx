@@ -77,7 +77,23 @@ export default function AiCopilot() {
       .finally(() => setLoading(false));
   };
 
-  const handleSendMessage = (text = null) => {
+  const speakText = (text) => {
+    if (!window.speechSynthesis) return;
+    window.speechSynthesis.cancel();
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = selectedLanguage === 'en' ? 'en-US' : (
+      selectedLanguage === 'hi' ? 'hi-IN' : (
+        selectedLanguage === 'ta' ? 'ta-IN' : (
+          selectedLanguage === 'te' ? 'te-IN' : (
+            selectedLanguage === 'ml' ? 'ml-IN' : 'kn-IN'
+          )
+        )
+      )
+    );
+    window.speechSynthesis.speak(utterance);
+  };
+
+  const handleSendMessage = (text = null, speakResponse = false) => {
     const queryText = text || inputValue;
     if (!queryText.trim()) return;
 
@@ -89,6 +105,9 @@ export default function AiCopilot() {
       .then(res => {
         if (res?.success) {
           setMessages(prev => [...prev, { sender: 'ai', text: res.data.response }]);
+          if (speakResponse) {
+            speakText(res.data.response);
+          }
           // Refresh logs
           copilotService.getHistory().then(h => { if (h?.success) setHistoryLogs(h.data); });
         }
@@ -98,12 +117,60 @@ export default function AiCopilot() {
   };
 
   const handleVoiceCommand = (commandText) => {
-    setRecording(true);
-    // Simulate Speech-to-Text transcription delay
-    setTimeout(() => {
+    if (typeof commandText === 'string') {
+      setRecording(true);
+      // Simulate Speech-to-Text transcription delay
+      setTimeout(() => {
+        setRecording(false);
+        handleSendMessage(commandText, true);
+      }, 1500);
+      return;
+    }
+
+    // Toggle actual HTML5 Speech Recognition
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+      alert("Web Speech API is not supported in this browser. Please try another browser or type your query.");
+      return;
+    }
+
+    if (recording) {
       setRecording(false);
-      handleSendMessage(commandText);
-    }, 1500);
+      return;
+    }
+
+    const recognition = new SpeechRecognition();
+    recognition.lang = selectedLanguage === 'en' ? 'en-US' : (
+      selectedLanguage === 'hi' ? 'hi-IN' : (
+        selectedLanguage === 'ta' ? 'ta-IN' : (
+          selectedLanguage === 'te' ? 'te-IN' : (
+            selectedLanguage === 'ml' ? 'ml-IN' : 'kn-IN'
+          )
+        )
+      )
+    );
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+
+    recognition.onstart = () => {
+      setRecording(true);
+    };
+
+    recognition.onerror = (event) => {
+      console.error("Speech recognition error", event.error);
+      setRecording(false);
+    };
+
+    recognition.onend = () => {
+      setRecording(false);
+    };
+
+    recognition.onresult = (event) => {
+      const speechToText = event.results[0][0].transcript;
+      handleSendMessage(speechToText, true);
+    };
+
+    recognition.start();
   };
 
   const handleFileChange = (e) => {
@@ -270,7 +337,7 @@ export default function AiCopilot() {
 
                   <div className="my-6">
                     <button 
-                      onClick={() => handleVoiceCommand("Show medicine shortage")}
+                      onClick={() => handleVoiceCommand()}
                       className={`w-20 h-20 rounded-full flex items-center justify-center border-4 border-white shadow-xl transition-all ${
                         recording ? 'bg-red-500 text-white animate-pulse' : 'bg-teal-500 text-white hover:opacity-95'
                       }`}
