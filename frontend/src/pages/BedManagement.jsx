@@ -25,6 +25,7 @@ import {
 } from 'recharts';
 import { hospitalService } from '../services/hospital';
 import { dashboardService } from '../services/dashboard';
+import { bedService } from '../services/bed';
 
 export default function BedManagement() {
   const [hospitals, setHospitals] = useState([]);
@@ -33,6 +34,88 @@ export default function BedManagement() {
   const [search, setSearch] = useState('');
   const [typeFilter, setTypeFilter] = useState('ALL');
   const [selectedHospital, setSelectedHospital] = useState(null);
+
+  // Modal States
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalHospitalId, setModalHospitalId] = useState('');
+  const [modalBedType, setModalBedType] = useState('GENERAL');
+  const [modalTotalBeds, setModalTotalBeds] = useState(0);
+  const [modalOccupiedBeds, setModalOccupiedBeds] = useState(0);
+  const [activeBedId, setActiveBedId] = useState(null);
+  const [modalError, setModalError] = useState(null);
+  const [modalLoading, setModalLoading] = useState(false);
+
+  // Load current bed counts dynamically when selection changes in modal
+  useEffect(() => {
+    if (isModalOpen && modalHospitalId && modalBedType) {
+      setModalLoading(true);
+      bedService.getAllBeds({ hospital_id: modalHospitalId, bed_type: modalBedType })
+        .then((res) => {
+          if (res.success && res.data && res.data.items && res.data.items.length > 0) {
+            const bed = res.data.items[0];
+            setModalTotalBeds(bed.total_beds);
+            setModalOccupiedBeds(bed.occupied_beds);
+            setActiveBedId(bed.id);
+          } else {
+            setModalTotalBeds(0);
+            setModalOccupiedBeds(0);
+            setActiveBedId(null);
+          }
+        })
+        .catch((err) => console.error("Error loading current bed count", err))
+        .finally(() => setModalLoading(false));
+    }
+  }, [isModalOpen, modalHospitalId, modalBedType]);
+
+  const handleModalSubmit = (e) => {
+    e.preventDefault();
+    setModalError(null);
+    setModalLoading(true);
+
+    const available_beds = Math.max(0, modalTotalBeds - modalOccupiedBeds);
+    const bedData = {
+      hospital_id: modalHospitalId,
+      bed_type: modalBedType,
+      total_beds: modalTotalBeds,
+      occupied_beds: modalOccupiedBeds,
+      available_beds: available_beds
+    };
+
+    const action = activeBedId 
+      ? bedService.updateBed(activeBedId, {
+          total_beds: modalTotalBeds,
+          occupied_beds: modalOccupiedBeds,
+          available_beds: available_beds
+        })
+      : bedService.createBed(bedData);
+
+    action
+      .then((res) => {
+        if (res.success) {
+          setIsModalOpen(false);
+          // Reload page stats
+          return Promise.all([
+            hospitalService.getAllHospitals(),
+            dashboardService.getAnalytics()
+          ]).then(([hospRes, analyticsRes]) => {
+            if (hospRes.success && hospRes.data) {
+              setHospitals(hospRes.data.items || []);
+            }
+            if (analyticsRes.success && analyticsRes.data) {
+              setAnalytics(analyticsRes.data);
+            }
+          });
+        } else {
+          setModalError(res.message || "Failed to update bed details.");
+        }
+      })
+      .catch((err) => {
+        setModalError("Failed to save bed details. Please check permissions.");
+      })
+      .finally(() => {
+        setModalLoading(false);
+      });
+  };
 
   useEffect(() => {
     setLoading(true);
@@ -92,7 +175,13 @@ export default function BedManagement() {
           </p>
         </div>
         <div className="flex gap-2">
-          <button className="px-4 py-2 bg-gradient-to-r from-teal-500 to-blue-600 rounded-xl text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 hover:opacity-95 transition shadow-lg shadow-teal-500/10">
+          <button 
+            onClick={() => {
+              if (hospitals.length > 0) setModalHospitalId(hospitals[0].id);
+              setIsModalOpen(true);
+            }}
+            className="px-4 py-2 bg-gradient-to-r from-teal-500 to-blue-600 rounded-xl text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 hover:opacity-95 transition shadow-lg shadow-teal-500/10 cursor-pointer"
+          >
             <Plus className="w-4 h-4" /> Allocate Emergency Beds
           </button>
         </div>
@@ -198,8 +287,12 @@ export default function BedManagement() {
                           <span className="text-xs font-bold text-slate-700">{available}</span>
                         </div>
                         <button 
-                          onClick={() => setSelectedHospital(h)}
-                          className="p-2 rounded-lg bg-slate-50 border border-slate-100 hover:bg-slate-100 text-slate-500 transition"
+                          onClick={() => {
+                            setModalHospitalId(h.id);
+                            setIsModalOpen(true);
+                          }}
+                          className="p-2 rounded-lg bg-slate-50 border border-slate-100 hover:bg-slate-100 text-slate-500 transition cursor-pointer"
+                          title="Allocate/Manage Facility Beds"
                         >
                           <Maximize2 className="w-3.5 h-3.5" />
                         </button>
@@ -214,7 +307,7 @@ export default function BedManagement() {
 
         {/* Right Side: Charts breakdown */}
         <div className="lg:col-span-4 space-y-6">
-          <div className="glass-card rounded-3xl p-6 border-slate-200/80 shadow-sm text-center">
+          <div className="glass-card rounded-3xl p-6 border-slate-200/80 shadow-sm text-center bg-white/90">
             <h3 className="text-xs font-bold text-slate-800 uppercase tracking-wider text-left mb-4">Critical Care Distribution</h3>
             
             <div className="h-56 flex items-center justify-center">
@@ -240,7 +333,7 @@ export default function BedManagement() {
             </div>
           </div>
 
-          <div className="glass-card rounded-3xl p-6 border-slate-200/80 shadow-sm">
+          <div className="glass-card rounded-3xl p-6 border-slate-200/80 shadow-sm bg-white/90">
             <h3 className="text-xs font-bold text-slate-800 uppercase tracking-wider mb-4">Weekly Admission Trends</h3>
             <div className="h-40">
               <ResponsiveContainer width="100%" height="100%">
@@ -261,6 +354,116 @@ export default function BedManagement() {
           </div>
         </div>
       </div>
+
+      {/* Allocate Emergency Beds Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <div className="fixed inset-0 bg-slate-950/40 backdrop-blur-sm" onClick={() => setIsModalOpen(false)} />
+          
+          <div className="relative glass-card w-full max-w-md rounded-3xl border-slate-200/80 shadow-2xl p-6 text-left animate-fade-in-up bg-white/95">
+            <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-teal-500 to-blue-600"></div>
+            
+            <h3 className="text-base font-bold text-slate-800 border-b border-slate-100 pb-3 mt-1">Allocate Emergency Beds</h3>
+            <p className="text-xs text-slate-400 mt-1">
+              Configure and allocate bed telemetry stats across district healthcare units.
+            </p>
+
+            <form onSubmit={handleModalSubmit} className="space-y-4 mt-4">
+              {modalError && (
+                <div className="p-3 bg-red-50 border border-red-200/60 rounded-xl text-xs text-red-700 font-semibold">
+                  {modalError}
+                </div>
+              )}
+
+              {/* Facility Selector */}
+              <div className="space-y-1">
+                <label className="text-[9px] font-extrabold text-slate-500 uppercase tracking-widest block">Select Healthcare Facility</label>
+                <select
+                  value={modalHospitalId}
+                  onChange={(e) => setModalHospitalId(e.target.value)}
+                  className="w-full px-3 py-2.5 rounded-xl border border-slate-200 bg-white text-xs font-semibold focus:outline-none focus:border-teal-500"
+                  required
+                >
+                  {hospitals.map((h) => (
+                    <option key={h.id} value={h.id}>
+                      {h.hospital_name} ({h.hospital_type} - {h.taluk})
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Bed Type Selector */}
+              <div className="space-y-1">
+                <label className="text-[9px] font-extrabold text-slate-500 uppercase tracking-widest block">Bed Classification Type</label>
+                <select
+                  value={modalBedType}
+                  onChange={(e) => setModalBedType(e.target.value)}
+                  className="w-full px-3 py-2.5 rounded-xl border border-slate-200 bg-white text-xs font-semibold focus:outline-none focus:border-teal-500"
+                  required
+                >
+                  <option value="GENERAL">General Isolation Bed</option>
+                  <option value="ICU">Intensive Care Unit (ICU) Bed</option>
+                  <option value="OXYGEN">Oxygen Supported Bed</option>
+                  <option value="VENTILATOR">Ventilator Bed</option>
+                </select>
+              </div>
+
+              {/* Bed counts input */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-1">
+                  <label className="text-[9px] font-extrabold text-slate-500 uppercase tracking-widest block">Total Beds Count</label>
+                  <input
+                    type="number"
+                    value={modalTotalBeds}
+                    onChange={(e) => setModalTotalBeds(Math.max(0, parseInt(e.target.value) || 0))}
+                    className="w-full px-3 py-2.5 rounded-xl border border-slate-200 bg-white text-xs font-semibold focus:outline-none focus:border-teal-500"
+                    required
+                    min="0"
+                  />
+                </div>
+
+                <div className="space-y-1">
+                  <label className="text-[9px] font-extrabold text-slate-500 uppercase tracking-widest block">Occupied Beds Count</label>
+                  <input
+                    type="number"
+                    value={modalOccupiedBeds}
+                    onChange={(e) => setModalOccupiedBeds(Math.max(0, parseInt(e.target.value) || 0))}
+                    className="w-full px-3 py-2.5 rounded-xl border border-slate-200 bg-white text-xs font-semibold focus:outline-none focus:border-teal-500"
+                    required
+                    min="0"
+                  />
+                </div>
+              </div>
+
+              {/* Calculated available beds */}
+              <div className="p-3 bg-slate-50 rounded-xl border border-slate-100 flex justify-between items-center text-xs">
+                <span className="font-semibold text-slate-500">Calculated Available Beds:</span>
+                <span className="font-black text-slate-700 text-sm">
+                  {Math.max(0, modalTotalBeds - modalOccupiedBeds)} Beds
+                </span>
+              </div>
+
+              {/* Actions */}
+              <div className="flex justify-end gap-3 pt-3 border-t border-slate-100 mt-4">
+                <button
+                  type="button"
+                  onClick={() => setIsModalOpen(false)}
+                  className="px-4 py-2 border border-slate-200 rounded-xl text-xs font-bold text-slate-650 hover:bg-slate-50 transition cursor-pointer"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  disabled={modalLoading}
+                  className="px-5 py-2.5 bg-gradient-to-r from-teal-500 to-blue-600 text-white rounded-xl text-xs font-bold transition flex items-center gap-1.5 shadow-md cursor-pointer disabled:opacity-75"
+                >
+                  {modalLoading ? "Processing..." : (activeBedId ? "Save Changes" : "Allocate Beds")}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </motion.div>
   );
 }
