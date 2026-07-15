@@ -1,7 +1,6 @@
 # Databases
-*.db
 *.sqlite
-smarthealth_nexus.db
+smarthealth_nexus_backup.db
 backend/smarthealth_nexus.db
 backend/seeds/data/
 
