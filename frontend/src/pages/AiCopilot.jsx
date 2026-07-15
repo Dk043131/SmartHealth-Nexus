@@ -58,6 +58,25 @@ export default function AiCopilot() {
       .catch(err => console.error("Error loading Copilot dependencies", err));
   }, []);
 
+  const translateChatHistory = (targetLang) => {
+    setLoading(true);
+    const promises = messages.map(msg => 
+      copilotService.translate(msg.text, targetLang)
+        .then(res => ({
+          sender: msg.sender,
+          text: (res.success && res.data && res.data.translated) ? res.data.translated : msg.text
+        }))
+        .catch(() => msg)
+    );
+
+    Promise.all(promises)
+      .then(translatedMsgs => {
+        setMessages(translatedMsgs);
+      })
+      .catch(err => console.error("Error translating conversation thread", err))
+      .finally(() => setLoading(false));
+  };
+
   const handleSendMessage = (text = null) => {
     const queryText = text || inputValue;
     if (!queryText.trim()) return;
@@ -185,7 +204,11 @@ export default function AiCopilot() {
                     <span className="text-xs font-bold text-slate-800 uppercase">Select Dialect:</span>
                     <select
                       value={selectedLanguage}
-                      onChange={(e) => setSelectedLanguage(e.target.value)}
+                      onChange={(e) => {
+                        const newLang = e.target.value;
+                        setSelectedLanguage(newLang);
+                        translateChatHistory(newLang);
+                      }}
                       className="bg-slate-50 border border-slate-200/80 rounded-lg px-2 py-1 text-xs text-slate-700 focus:outline-none"
                     >
                       {languages.map(lang => (
