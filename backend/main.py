@@ -45,6 +45,27 @@ from backend.routes.v1 import (
 # Initialize database tables on startup
 Base.metadata.create_all(bind=engine)
 
+# Auto-seed database if empty (for fresh deployments)
+def auto_seed():
+    from backend.core.database import SessionLocal
+    from backend.models.models import Hospital
+    db = SessionLocal()
+    try:
+        count = db.query(Hospital).count()
+        if count == 0:
+            logger.info("Database is empty — running auto-seed...")
+            from backend.seeds.seed import seed_database
+            seed_database(db)
+            logger.info("Auto-seed completed successfully.")
+        else:
+            logger.info(f"Database already has {count} hospitals — skipping seed.")
+    except Exception as e:
+        logger.error(f"Auto-seed failed: {e}")
+    finally:
+        db.close()
+
+auto_seed()
+
 app = FastAPI(
     title=settings.PROJECT_NAME,
     version=settings.PROJECT_VERSION,
