@@ -21,6 +21,7 @@ export default function LoginPage() {
   const [selectedHospital, setSelectedHospital] = useState('');
   const [loading, setLoading] = useState(false);
   const [successMsg, setSuccessMsg] = useState('');
+  const [slowRequest, setSlowRequest] = useState(false);
 
   // Handle URL parameters for redirecting to register or expired sessions
   useEffect(() => {
@@ -84,6 +85,8 @@ export default function LoginPage() {
     }
 
     setLoading(true);
+    setSlowRequest(false);
+    const slowTimer = setTimeout(() => setSlowRequest(true), 5000);
 
     try {
       if (isRegister) {
@@ -102,7 +105,9 @@ export default function LoginPage() {
     } catch (err) {
       // Error is set in AuthContext
     } finally {
+      clearTimeout(slowTimer);
       setLoading(false);
+      setSlowRequest(false);
     }
   };
 
@@ -259,12 +264,20 @@ export default function LoginPage() {
             >
               {loading ? (
                 <>
-                  <Loader2 className="w-4 h-4 animate-spin" /> Verifying...
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                  {slowRequest ? 'Waking up server...' : 'Verifying...'}
                 </>
               ) : (
                 isRegister ? "Register Credentials" : "Authorize Session"
               )}
             </button>
+
+            {/* Cold start notice */}
+            {slowRequest && (
+              <p className="text-center text-xs text-amber-600 animate-pulse">
+                ⏳ Server is waking up from sleep — please wait ~30 more seconds...
+              </p>
+            )}
           </form>
 
           {/* Toggle Register / Login */}
