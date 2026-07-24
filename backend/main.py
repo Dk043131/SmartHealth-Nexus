@@ -47,6 +47,7 @@ Base.metadata.create_all(bind=engine)
 
 # Auto-seed database if empty (for fresh deployments)
 def auto_seed():
+    import os as _os
     from backend.core.database import SessionLocal
     from backend.models.models import Hospital
     db = SessionLocal()
@@ -55,12 +56,15 @@ def auto_seed():
         if count == 0:
             logger.info("Database is empty — running auto-seed...")
             from backend.seeds.seed import seed_database
-            seed_database(db)
+            # Use absolute path relative to this file's location
+            seed_dir = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "seeds", "data")
+            logger.info(f"Seed data directory: {seed_dir}")
+            seed_database(db, data_dir=seed_dir)
             logger.info("Auto-seed completed successfully.")
         else:
             logger.info(f"Database already has {count} hospitals — skipping seed.")
     except Exception as e:
-        logger.error(f"Auto-seed failed: {e}")
+        logger.error(f"Auto-seed failed: {e}", exc_info=True)
     finally:
         db.close()
 
